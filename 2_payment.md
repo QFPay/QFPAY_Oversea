@@ -75,8 +75,8 @@ Pay_type has the following parameters:
 
 Note：800151,800152,800201,800207 are for online scene.
 
-800108,800208,800228 are for offline scene.
-![image](https://github.com/linan0828/QFPAY_Oversea/blob/master/Contents/Pic/Flow.jpeg)
+800101,800108,800208,800228 are for offline scene.
+
 
 If customer payment currency is HKD, it means the customer must links with a HK ID and a HKD bank account in Hong Kong.
 
