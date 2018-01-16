@@ -105,7 +105,7 @@ Payment Example Response：
 ```javascript
 {"sysdtm": "2018-01-16 15:05:35", "resperr": "", "respmsg": "OK", "out_trade_no": "6167667", "syssn": "201801160902990017027307", "respcd": "0000", "pay_url": "https://intlmapi.alipay.com/gateway.do?out_trade_no=201801160902990017027307&service=create_forex_trade&sign_type=MD5&_input_charset=utf-8&sign=6922ae7ef17cb139ad32bb91492a0b2d&currency=HKD&notify_url=https%3A%2F%2Foverseaopenapi.qfpay.com%2Fnotify_receiver%2Fali%2F800151&total_fee=0.02&order_valid_time=600&partner=2088021017666931&order_gmt_create=2018-01-16+15%3A05%3A35&return_url=https%3A%2F%2Fosqt.qfpay.com%2Ftrade%2Fv1%2Falipay_online_return&subject=%E9%8A%85%E9%91%BC%E7%81%A3TEST%EF%BC%9A6167667"}
 ```  
-800152(Only RMB):After redirecet to pay_url,customer does the payment in Alipay APP.
+800152(RMB):After redirecet to pay_url,customer does the payment in Alipay APP.
 ```javascript
 {"sysdtm": "2018-01-16 15:09:06", "resperr": "", "respmsg": "OK", "out_trade_no": "10822320", "syssn": "201801160901990017027485", "respcd": "0000", "pay_url": "https://intlmapi.alipay.com/gateway.do?app_pay=Y&out_trade_no=201801160901990017027485&service=create_forex_trade_wap&_input_charset=utf-8&sign=20930d8320ab42e7cbddd2a167551ade&currency=HKD&timeout_rule=10m&notify_url=https%3A%2F%2Foverseaopenapi.qfpay.com%2Fnotify_receiver%2Fali%2F800152&total_fee=0.02&sign_type=MD5&partner=2088611221573217&return_url=https%3A%2F%2Fosqt.qfpay.com%2Ftrade%2Fv1%2Falipay_online_return_wap&subject=%E9%8A%85%E9%91%BC%E7%81%A3TEST%EF%BC%9A10822320"}
 ```  
@@ -117,7 +117,7 @@ Payment Example Response：
 ```javascript
 {"sysdtm": "2018-01-16 15:42:18", "respmsg": "ok", "qrcode": "https://qr.alipay.com/bax0817145eenvpxpgvp807b", "pay_type": "800101", "resperr": "", "txdtm": "2018-01-16 15:42:16", "txamt": "2", "out_trade_no": "16577171", "syssn": "201801160901990017028777", "txcurrcd": "HKD", "respcd": "0000"}
 ```
-800201(Only RMB):It can be used in a online shop, also in the offline scene.Merchant needs to convert qrcode string response to a QR code picture.Customer scans the QR code to do the payment. 
+800201(RMB):It can be used in a online shop, also in the offline scene.Merchant needs to convert qrcode string response to a QR code picture.Customer scans the QR code to do the payment. 
 ```javascript
 {"pay_type": "800201", "out_trade_no": "83273364", "txdtm": "2018-01-16 15:18:20", "resperr": "", "txamt": "2", "respmsg": "ok", "sysdtm": "2018-01-16 15:18:22", "syssn": "201801160902990017027862", "txcurrcd": "HKD", "qrcode": "weixin://wxpay/bizpayurl?pr=LLddgP0", "respcd": "0000"}
 ```  
@@ -125,7 +125,8 @@ Payment Example Response：
 ```javascript
 {"pay_type": "800208", "out_trade_no": "12227571", "cardcd": "", "txdtm": "2018-01-16 15:48:08", "resperr": "\u4ea4\u6613\u5931\u8d25\uff0c\u8bf7\u8054\u7cfb\u5ba2\u670d(1145)", "txamt": "2", "respmsg": "\u9700\u8981\u7528\u6237\u8f93\u5165\u652f\u4ed8\u5bc6\u7801", "sysdtm": "2018-01-16 15:48:10", "syssn": "201801160901990017029000", "txcurrcd": "HKD", "respcd": "1145", "code_url": ""}
 ``` 
-
+800228(HKD)
+800207(RMB)
 
 
 + 2.  /close--------------close the order(Only applicable for Wechat Online payment，Alipay not applicable.)
