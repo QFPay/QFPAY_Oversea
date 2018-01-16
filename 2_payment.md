@@ -99,6 +99,35 @@ If customer payment currency is HKD+RMB, it means the customer can be both China
 |800228  |Wechat HK  Barcode Payment|For bar code scanning gun in a store|
 |800207  |Wechat H5|In Wechat browser|
 
+Payment Example Response：
+
+800151(RMB):After redirecet to pay_url,customer scan the QR code to finish the payment. 
+```javascript
+{"sysdtm": "2018-01-16 15:05:35", "resperr": "", "respmsg": "OK", "out_trade_no": "6167667", "syssn": "201801160902990017027307", "respcd": "0000", "pay_url": "https://intlmapi.alipay.com/gateway.do?out_trade_no=201801160902990017027307&service=create_forex_trade&sign_type=MD5&_input_charset=utf-8&sign=6922ae7ef17cb139ad32bb91492a0b2d&currency=HKD&notify_url=https%3A%2F%2Foverseaopenapi.qfpay.com%2Fnotify_receiver%2Fali%2F800151&total_fee=0.02&order_valid_time=600&partner=2088021017666931&order_gmt_create=2018-01-16+15%3A05%3A35&return_url=https%3A%2F%2Fosqt.qfpay.com%2Ftrade%2Fv1%2Falipay_online_return&subject=%E9%8A%85%E9%91%BC%E7%81%A3TEST%EF%BC%9A6167667"}
+```  
+800152(Only RMB):After redirecet to pay_url,customer does the payment in Alipay APP.
+```javascript
+{"sysdtm": "2018-01-16 15:09:06", "resperr": "", "respmsg": "OK", "out_trade_no": "10822320", "syssn": "201801160901990017027485", "respcd": "0000", "pay_url": "https://intlmapi.alipay.com/gateway.do?app_pay=Y&out_trade_no=201801160901990017027485&service=create_forex_trade_wap&_input_charset=utf-8&sign=20930d8320ab42e7cbddd2a167551ade&currency=HKD&timeout_rule=10m&notify_url=https%3A%2F%2Foverseaopenapi.qfpay.com%2Fnotify_receiver%2Fali%2F800152&total_fee=0.02&sign_type=MD5&partner=2088611221573217&return_url=https%3A%2F%2Fosqt.qfpay.com%2Ftrade%2Fv1%2Falipay_online_return_wap&subject=%E9%8A%85%E9%91%BC%E7%81%A3TEST%EF%BC%9A10822320"}
+```  
+800108(RMB+HKD):After the Merchant uses bar code scanning gun to get auth_code, and does the payment request.
+```javascript
+{"pay_type": "800108", "cardcd": "2088202283656563", "txdtm": "2018-01-16 15:12:20", "resperr": "", "txamt": "2", "respmsg": "ok", "out_trade_no": "16888127", "syssn": "201801160901990017027630", "txcurrcd": "HKD", "respcd": "0000", "sysdtm": "2018-01-16 15:12:22"}
+``` 
+800101（RMB+HKD）:Merchant needs to convert qrcode string response to a QR code picture.Customer scans the QR code to do the payment. Note: This is only applicable for offline scene.If use in online, Alipay has the right to close the account.
+```javascript
+{"sysdtm": "2018-01-16 15:42:18", "respmsg": "ok", "qrcode": "https://qr.alipay.com/bax0817145eenvpxpgvp807b", "pay_type": "800101", "resperr": "", "txdtm": "2018-01-16 15:42:16", "txamt": "2", "out_trade_no": "16577171", "syssn": "201801160901990017028777", "txcurrcd": "HKD", "respcd": "0000"}
+```
+800201(Only RMB):It can be used in a online shop, also in the offline scene.Merchant needs to convert qrcode string response to a QR code picture.Customer scans the QR code to do the payment. 
+```javascript
+{"pay_type": "800201", "out_trade_no": "83273364", "txdtm": "2018-01-16 15:18:20", "resperr": "", "txamt": "2", "respmsg": "ok", "sysdtm": "2018-01-16 15:18:22", "syssn": "201801160902990017027862", "txcurrcd": "HKD", "qrcode": "weixin://wxpay/bizpayurl?pr=LLddgP0", "respcd": "0000"}
+```  
+800208(RMB):After the Merchant uses bar code scanning gun to get auth_code, and does the payment request.When returns 1145, it means the customer needs to input the password.It does not mean the payment is failure.Merchant needs to do the query to confirm the payment status.
+```javascript
+{"pay_type": "800208", "out_trade_no": "12227571", "cardcd": "", "txdtm": "2018-01-16 15:48:08", "resperr": "\u4ea4\u6613\u5931\u8d25\uff0c\u8bf7\u8054\u7cfb\u5ba2\u670d(1145)", "txamt": "2", "respmsg": "\u9700\u8981\u7528\u6237\u8f93\u5165\u652f\u4ed8\u5bc6\u7801", "sysdtm": "2018-01-16 15:48:10", "syssn": "201801160901990017029000", "txcurrcd": "HKD", "respcd": "1145", "code_url": ""}
+``` 
+
+
+
 + 2.  /close--------------close the order(Only applicable for Wechat Online payment，Alipay not applicable.)
 
 Note:The default close time for Alipay online payment is 10 mins,users can set valid_time(close time) for alipay.
@@ -188,11 +217,6 @@ For Alipay online payment, after the transaction, it will redirect to the return
 
 
 Example Response：
-
-Do Payment:
-```javascript
-{"pay_type": "800208", "out_trade_no": "57003579", "cardcd": "oKeGJuIhEWuWZQPdXFBkXdgr5nLc", "txdtm": "2017-09-06 14:56:43", "resperr": "", "txamt": "10", "respmsg": "ok", "sysdtm": "2017-09-06 14:56:43", "syssn": "201709060902990042326492", "txcurrcd": "HKD", "respcd": "0000", "code_url": ""}
-```
 Query Payment: 
 ```javascript
 {"respmsg": "", "resperr": "", "respcd": "0000", "data": [{"pay_type": "800208", "sysdtm": "2017-09-06 14:56:43", "order_type": "payment", "txcurrcd": "", "txdtm": "2017-09-06 14:56:43", "txamt": "10", "out_trade_no": "57003579", "syssn": "201709060902990042326492", "cancel": "0", "respcd": "0000", "errmsg": "\u4ea4\u6613\u6210\u529f"}], "page": 1, "page_size": 10}
