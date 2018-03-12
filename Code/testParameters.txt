@@ -1,3 +1,5 @@
+If use Chengdu System:
+
 800151,800108,800152,800201,800208 use the following parameters：
 appcode:123456
 key:123456
@@ -9,6 +11,12 @@ key:64E833CD7FCD412CA609E020F717FF10
 mchid:k4j36qpRdzj9OTbW4OP0Od2g59
 
 800207: no testing account provided.
+--------------------------------------------------------------------------------------
 
-Put the above parameters to the following website, to get a better idea of QFPay API.
-http://bartforfun.oicp.io:8080/QFPayOverseaQiantai/
+
+If use Beijing System:
+Use:
+https://openapi.qfpay.com
+code:   53CA1AF917AD4BA09292A094E0D3944B
+key:   98EC8371529B4C47A1A95C7047485DB8
+
