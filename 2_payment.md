@@ -199,6 +199,7 @@ For pre order ,when server get payment result, the result will be sent through p
 | udid |Device unique id| | | |
 |respcd|Respond code|||0000|
 |respmesg|Respond message||||
+Note:The MD5 value is based on the return parameters of notify message.
 
 +  7.Online Alipay payment redirect parameters
 
