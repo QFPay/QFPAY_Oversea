@@ -1,4 +1,6 @@
-If use Chengdu System:
+If use Chengdu System(mchid provided):
+Use:https://osqt.qfpay.com
+Use product_name for product name.
 
 800151,800108,800152,800201,800208 use the following parameters：
 appcode:123456
@@ -10,13 +12,14 @@ appcode:D6807A9A6C654E4AB2D1A162831DBA5D
 key:64E833CD7FCD412CA609E020F717FF10
 mchid:k4j36qpRdzj9OTbW4OP0Od2g59
 
-800207: no testing account provided.
+800207: no testing account provided,because we do not have extra OA account.
 --------------------------------------------------------------------------------------
-
-
-If use Beijing System:
+If use Beijing System(no mchid provided):
 Use:
-https://openapi.qfpay.com
+1.https://openapi.qfpay.com(Production Enviroment)
+2.https://openapi-test.qfpay.com(Test Enviroment,before production stage,use this link.)
+
+Use goods_name for product name.
 code:   53CA1AF917AD4BA09292A094E0D3944B
 key:   98EC8371529B4C47A1A95C7047485DB8
 
