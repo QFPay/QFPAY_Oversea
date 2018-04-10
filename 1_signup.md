@@ -1,4 +1,4 @@
-# 1.Sub merchant signup/query interface
+# 1.Sub merchant signup/query interface(Only for Chengdu System,not for Beijing System)
 + 1./mch/v1/signup sign up interface                            
 Sign up sub merchant interface, if succeed, return sub merchant id:mchid,after auditing,merchant can use the payment service. The sub merchant default PIN code is the last 6 digits of ID card number.                         
 POST          
