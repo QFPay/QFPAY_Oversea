@@ -31,7 +31,7 @@ Alipay:The return and notify URL are set by QFPay person.
  
  1.Apply Wechat and Alipay account from Qfpay.
  
-2.Qfpay provides appcode,key,mchid to merchant.
+2.Qfpay provides appcode,key,mchid(optional) to merchant.
 
 3.Merchant use Qfpay parameters to do the development.
 
@@ -50,9 +50,6 @@ for more details.
 
 Notes:
 
-
- 
- [Test link](http://bartforfun.oicp.io:8080/QFPayOverseaQiantai/) :For testing parameters is right or wrong.
  
  [Example code](https://github.com/linan0828/QFPAY_Oversea/tree/master/Code):It has test parameters and code.
  
@@ -62,7 +59,7 @@ Notes:
 
 | Field Name    | Description   | Required  | Notes 	 | Example  |
 | ------------- |:-------------:| ---------:| ----------:| --------:|
-|mchid  |QFPay mchid|Y|Do not confuse with Wechat mchid, they are totally different!|BvDtmKJA5mx7GpN0 |
+|mchid  |QFPay mchid|Y|Do not confuse with Wechat mchid, they are totally different!Beijing System not needed.|BvDtmKJA5mx7GpN0 |
 | pay_type |Payment type|Y| | 800208|
 | out_trade_no |Reference number for merchant|Y| |1470020842103 |
 | txdtm |Payment time| Y | |2016-08-01 11:07:22|
@@ -136,7 +133,7 @@ Note:The default close time for Alipay online payment is 10 mins,users can set v
 
 | Field Name    | Description   | Required  |  Example  |
 | ------------- |:-------------:| ---------:|  --------:|
-|mchid  |The code return by signup interface|Y|BvDtmKJA5mx7GpN0 |
+|mchid  |The code return by signup interface.Beijing System not needed.|Y|BvDtmKJA5mx7GpN0 |
 |syssn|transaction serial number|out_trade_no or syssn must be passed in|201607280901020011216135|
 |out_trade_no|external order number||1470020842103|
 | txdtm |transaction time|Y | |
@@ -191,7 +188,7 @@ For pre order ,when server get payment result, the result will be sent through p
 
 | Field Name    | Description   | Required  | Notes 	 | Example  |
 | ------------- |:-------------:| ---------:| ----------:| --------:|
-|Mchid  |The code return by signup interface| |If not fill in |BvDtmKJA5mx7GpN0 |
+|Mchid  |The code return by signup interface.Beijing System not needed.| |If not fill in |BvDtmKJA5mx7GpN0 |
 |syssn  |original transaction number|Y|
 | pay_type |Payment type|Y | | 800208|
 | out_trade_no |Reference number| Y| |1470020842103 |
@@ -208,7 +205,7 @@ For Alipay online payment, after the transaction, it will redirect to the return
 
 | Field Name    | Description   | Required  | Notes 	 | Example  |
 | ------------- |:-------------:| ---------:| ----------:| --------:|
-|Mchid  |The code return by signup interface| |If not fill in |BvDtmKJA5mx7GpN0 |
+|Mchid  |The code return by signup interface.Beijing System not needed.| |If not fill in |BvDtmKJA5mx7GpN0 |
 |syssn  |original transaction number|Y|
 | pay_type |Payment type|Y | | 800208|
 | out_trade_no |Reference number| Y| |1470020842103 |
