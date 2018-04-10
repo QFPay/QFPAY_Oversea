@@ -19,6 +19,7 @@ It is visible to merchant.
 Level2:
 It is not visible to merchant,QFPay encapsulates the logic behind it.
 So one pair of parameter can use be both used in Alipay and Wechat.
+Only Chengdu System has mchid, Beijing System not needed.
  
  This payment API can not be used in a mobile phone app development.（No SDK provided）
  
