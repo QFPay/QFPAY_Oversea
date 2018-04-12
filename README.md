@@ -5,9 +5,7 @@ This documentation is for QFPAY oversea integration（Chengdu Version）.
 To invoke the payment interface for example ,the URL is :https://osqt.qfpay.com/trade/v1/payment
 
 Note:This API has no sandbox enviroment, please be noted.
-## Glossary
-* appcode：Developer only identification ID.
-* key: Developer key， invoke other interfaces except SDK,include refund，reverse，get OAuth and access token，
+
 
 ## [0.Request method](https://github.com/linan0828/QFPAY_Oversea/blob/master/0_Request_method.md)     
 * 1.Non OAuth 2.0 Interface 
