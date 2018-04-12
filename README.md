@@ -1,6 +1,6 @@
 # Table of Contents
 ## Introduction
-This documentation is for QFPAY oversea integration.
+This documentation is for QFPAY oversea integration（Chengdu Version）.
 
 To invoke the payment interface for example ,the URL is :https://osqt.qfpay.com/trade/v1/payment
 
